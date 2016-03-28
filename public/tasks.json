@@ -1,0 +1,171 @@
+[
+  {
+    "id": 1,
+    "taskName": "Розробка сайту",
+    "intervals" : [{
+      "startDate": "2016-01-20",
+      "endDate": "2016-04-20"
+    }],
+    "subtasks": [
+      {
+        "id": 2,
+        "taskName": "Розробка технічного завдання",
+        "intervals" : [{
+          "startDate": "2016-01-20",
+          "endDate": "2016-01-23"
+        }],
+        "subtasks": []
+      },
+      {
+        "id": 3,
+        "taskName": "Розробка дизайну",
+        "intervals" : [{
+          "startDate": "2016-01-20",
+          "endDate": "2016-02-10"
+        }],
+        "subtasks": [
+          {
+            "id": 4,
+            "taskName": "Логотип",
+            "intervals" : [{
+              "startDate": "2016-01-20",
+              "endDate": "2016-02-01"
+            }],
+            "subtasks": []
+          },
+          {
+            "id": 5,
+            "taskName": "Головна сторінка",
+            "intervals" : [{
+              "startDate": "2016-02-01",
+              "endDate": "2016-02-05"
+            }],
+            "subtasks": []
+          },
+          {
+            "id": 6,
+            "taskName": "Внутрішня сторінка",
+            "intervals" : [{
+              "startDate": "2016-02-05",
+              "endDate": "2016-02-10"
+            }],
+            "subtasks": []
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "taskName": "Front-end",
+        "intervals" : [{
+          "startDate": "2016-02-05",
+          "endDate": "2016-04-10"
+        }],
+        "subtasks": [
+          {
+            "id": 8,
+            "taskName": "Верстка головної сторінки",
+            "intervals" : [{
+              "startDate": "2016-02-05",
+              "endDate": "2016-02-07"
+            }],
+            "subtasks": []
+          },
+          {
+            "id": 9,
+            "taskName": "Написання скріптів для головної сторінки",
+            "intervals" : [{
+              "startDate": "2016-02-07",
+              "endDate": "2016-02-17"
+            }],
+            "subtasks": []
+          },
+          {
+            "id": 10,
+            "taskName": "Верстка внутрішньої сторінки",
+            "intervals" : [{
+              "startDate": "2016-02-10",
+              "endDate": "2016-02-20"
+            }],
+            "subtasks": []
+          },
+          {
+            "id": 11,
+            "taskName": "Написання скріптів для внутрішньої сторінки",
+            "intervals" : [{
+              "startDate": "2016-02-20",
+              "endDate": "2016-03-01"
+            }],
+            "subtasks": []
+          },
+          {
+            "id": 12,
+            "taskName": "Модифікації",
+            "intervals" : [{
+              "startDate": "2016-02-07",
+              "endDate": "2016-04-10"
+            }],
+            "subtasks": []
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "taskName": "Back-end",
+        "intervals" : [{
+          "startDate": "2016-02-15",
+          "endDate": "2016-04-10"
+        }],
+        "subtasks": [
+          {
+            "id": 14,
+            "taskName": "Розробка БД",
+            "intervals" : [
+              {
+                "startDate": "2016-02-06",
+                "endDate": "2016-02-08"
+              },
+              {
+                "startDate": "2016-02-19",
+                "endDate": "2016-02-21"
+              }
+            ],
+            "subtasks": []
+          },
+          {
+            "id": 15,
+            "taskName": "Модифікації",
+            "intervals" : [
+              {
+                "startDate": "2016-02-21",
+                "endDate": "2016-04-10"
+              }
+            ],
+            "subtasks": []
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "taskName": "Тестування",
+        "intervals" : [
+          {
+            "startDate": "2016-02-15",
+            "endDate": "2016-04-10"
+          }
+        ],
+        "subtasks": []
+      },
+      {
+        "id": 17,
+        "taskName": "Deploy",
+        "intervals" : [
+          {
+            "startDate": "2016-04-10",
+            "endDate": "2016-04-20"
+          }
+        ],
+        "subtasks": []
+      }
+    ]
+  }
+]

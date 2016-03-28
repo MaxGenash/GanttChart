@@ -1,0 +1,317 @@
+/* ==========================================================================
+   Common styles
+   ========================================================================== */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0 auto;
+    min-width: 400px;
+}
+
+body {
+    font-family: 'Merriweather',serif;
+    font-size: 16px;
+    color: #333;
+    background-color: white;
+}
+
+
+
+
+
+/* ==========================================================================
+   Common elements' styles
+   ========================================================================== */
+.table-responsive {
+    overflow-x:auto;
+}
+
+
+
+
+
+/* ==========================================================================
+   Special page elements' styles
+   ========================================================================== */
+.header {
+    background-color: #455a64;
+    text-align: center;
+    width: 100%;
+}
+
+    .header__heading {
+        margin: 0 auto;
+        padding: 10px;
+        font-size: 1.8em;
+        font-family: comic, cursive;
+        color: #13daec;
+        font-weight: 300;
+        text-shadow: 0px 1px 0px #050058;
+    }
+
+
+.main-block {
+    padding: 0;
+    margin: 0 auto;
+    /*height: calc(100% - 109px);
+    min-height: 200px*/
+}
+
+    .settings {
+        margin: 8px;
+        text-align: center;
+    }
+
+        .zoom {
+            display: inline-block;
+        }
+
+            .zoom__label {
+
+            }
+
+            .zoom__select {
+                height: 34px;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #555;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+                -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            }
+
+    .GC {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+        .GC-table-wrapper {
+        }
+
+            .GC-table {
+                border-collapse: collapse;
+            }
+
+                .GC-table__head {
+
+                }
+
+                .GC-table__row{
+
+                }
+
+                    .GC-table__cell {
+                        white-space: nowrap;
+                        height: 30px;
+                        padding: 3px;
+                    }
+                    .GC-table__h-cell {
+                        text-align: center;
+                        background-color: rgb(217, 237, 247);
+                    }
+
+            .GC-table--left {
+
+            }
+
+                .GC-table--left__head {
+
+                }
+
+                .GC-table--left__row {
+
+                }
+                .GC-table--left__row--head-row {
+
+                }
+
+                    .GC-table--left__cell {
+                    }
+                    .GC-table--left__cell--fake {
+
+                    }
+                    .GC-table--left__cell--id {
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        max-width: 50px;
+                    }
+                    .GC-table--left__cell--task-name {
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        max-width: 200px;
+                    }
+
+            .GC-table--right {
+                position: relative;
+            }
+
+                .GC-table--right__head {
+
+                }
+
+                .GC-table--right__row {
+
+                }
+                .GC-table--right__row--month {
+
+                }
+                .GC-table--right__row--day {
+
+                }
+                .GC-table--right__row--task {
+
+                }
+
+                    .GC-table--right__cell {
+
+                    }
+                    .GC-table--right__cell:first-child {
+                        border-left: none;
+                    }
+                    .GC-table--right__cell--month {
+
+                    }
+                    .GC-table--right__cell--day {
+                        max-width: 20px;
+                        min-width: 20px;
+                    }
+                    .GC-table--right__cell--task-day {
+
+                    }
+
+                        .GC-table--right__task-stripe {
+                            position: absolute;
+                            z-index: 10;
+                            height: 27px;
+                        }
+
+
+            /* Тут особдиві стилі для різних масштабів */
+            .GC[data-scale="3"] {
+
+            }
+
+
+    .error-block {
+
+    }
+
+        .error-block__msg {
+
+        }
+
+
+
+td, th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+                td{
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                }
+
+            .selected-row {
+                background-color:  rgb(221, 221, 221);
+            }
+
+
+.footer {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    color: rgb(102, 102, 102);
+    bottom: 0;
+    border-top: 1px solid rgba(64, 83, 93, 0.2);
+    background-color: #eceff1;
+}
+
+    .footer__text {
+        margin: 0 auto;
+        padding: 15px;
+        color: #455a64;
+    }
+
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Media queries
+   ========================================================================== */
+
+@media (max-width: 599px) {
+    h1{
+        font-size: 1.1em;
+    }
+    main{
+        height: auto;
+        min-height: 100px;
+    }
+    #main-inner {
+        display: block;
+    }
+
+    footer p{
+        font-size: 0.9em;
+    }
+
+}
+
+@media (min-width: 600px) and (max-width: 700px) {
+    body {
+        font-size: 11pt;
+    }
+    h1{
+        font-size: 1.1em;
+    }
+    main{
+        height: calc(100% - 64px);
+    }
+    footer p{
+        font-size: 0.9em;
+    }
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}

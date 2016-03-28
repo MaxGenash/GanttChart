@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Ua Web Challenge VIII task solution</title>
+        <meta name="description" content="Це вирішення завдання для Ua Web Challenge IX">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/my-normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <!--[if lt IE]>
+            <p class="browserupgrade">
+                You are using an <strong>outdated</strong> browser.
+                Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+            </p>
+        <![endif]-->
+
+        <header class="header">
+            <h1 class="header__heading"> Діаграма Ганта </h1>
+        </header>
+
+        <main class="main-block">
+            <div id="settings" class="settings">
+                <div class="zoom">
+                    <label class="zoom__label" for="zoom__select"> Масштаб </label>
+                    <select id="zoom__select" class="zoom__select">
+                        <option value="0"> 1 година </option>
+                        <option value="1"> 2 години </option>
+                        <option value="2"> 6 годин </option>
+                        <option value="3"> 12 годин </option>
+                        <option value="4" selected="selected"> 1 день </option>
+                        <option value="5"> 3 дні </option>
+                        <option value="6"> 10 днів </option>
+                        <option value="7"> 30 днів </option>
+                        <option value="8"> 90 днів </option>
+                    </select>
+                </div>
+            </div>
+            <div id="GC-block" class="GC" data-scale="3">
+                <div class="GC-table-wrapper">
+                    <table class="GC-table GC-table--left">
+                        <thead class="GC-table__head GC-table--left__head">
+                        <tr class="GC-table__row GC-table--left__row GC-table--left__row--head-row">
+                            <th class="GC-table__cell GC-table--left__cell GC-table--left__cell--fake" colspan="2"></th>
+                        </tr>
+                        <tr class="GC-table__row GC-table--left__row GC-table--left__row--head-row">
+                            <th class="GC-table__cell GC-table__h-cell GC-table--left__cell"> ID </th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--left__cell"> Назва задачі </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="GC-table__row GC-table--left__row">
+                            <th class="GC-table__cell GC-table__h-cell GC-table--left__cell GC-table--left__cell--id"> 1 </th>
+                            <td class="GC-table__cell GC-table--left__cell GC-table--left__cell--task-name">
+                                Task 1
+                            </td>
+                        </tr>
+                        <tr class="GC-table__row GC-table--left__row">
+                            <th class="GC-table__cell GC-table__h-cell GC-table--left__cell GC-table--left__cell--id"> 2 </th>
+                            <td class="GC-table__cell GC-table--left__cell GC-table--left__cell--task-name" style="padding-left: 10px">
+                                Task 1_1
+                            </td>
+                        </tr>
+                        <tr class="GC-table__row GC-table--left__row">
+                            <th class="GC-table__cell GC-table__h-cell GC-table--left__cell GC-table--left__cell--id"> 3 </th>
+                            <td class="GC-table__cell GC-table--left__cell GC-table--left__cell--task-name">
+                                Task 1_2
+                            </td>
+                        </tr>
+                        <tr class="GC-table__row GC-table--left__row">
+                            <th class="GC-table__cell GC-table__h-cell GC-table--left__cell GC-table--left__cell--id"> 4 </th>
+                            <td class="GC-table__cell GC-table--left__cell GC-table--left__cell--task-name">
+                                Task 1_2_1
+                            </td>
+                        </tr>
+                        <tr class="GC-table__row GC-table--left__row">
+                            <th class="GC-table__cell GC-table__h-cell GC-table--left__cell GC-table--left__cell--id"> 5 </th>
+                            <td class="GC-table__cell GC-table--left__cell GC-table--left__cell--task-name">
+                                Task 1_2_2
+                            </td>
+                        </tr>
+                        <tr class="GC-table__row GC-table--left__row">
+                            <th class="GC-table__cell GC-table__h-cell GC-table--left__cell GC-table--left__cell--id"> 6 </th>
+                            <td class="GC-table__cell GC-table--left__cell GC-table--left__cell--task-name">
+                                Task 1_3
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="GC-table-wrapper table-responsive">
+                    <table class="GC-table GC-table--right">
+                        <thead class="GC-table__head GC-table--right__head">
+                        <tr class="GC-table__row GC-table--right__row GC-table--right__row--month">
+                            <th colspan="30" class="GC-table__cell GC-table__h-cell GC-table--right__cell--month">
+                                Березень, 2016
+                            </th>
+                            <th colspan="30" class="GC-table__cell GC-table__h-cell GC-table--right__cell--month">
+                                Квітень, 2016
+                            </th>
+                        </tr>
+                        <tr class="GC-table__row GC-table--right__row GC-table--right__row--day">
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">1</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">2</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">3</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">4</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">5</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">6</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">7</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">8</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">9</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">10</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">11</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">12</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">13</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">14</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">15</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">16</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">17</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">18</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">19</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">20</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">21</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">22</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">23</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">24</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">25</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">26</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">27</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">28</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">29</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">30</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">1</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">2</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">3</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">4</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">5</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">6</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">7</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">8</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">9</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">10</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">11</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">12</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">13</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">14</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">15</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">16</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">17</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">18</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">19</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">20</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">21</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">22</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">23</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">24</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">25</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">26</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">27</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">28</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">29</th>
+                            <th class="GC-table__cell GC-table__h-cell GC-table--right__cell--day">30</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="GC-table__row GC-table--right__row GC-table--right__row--task">
+                            <td class="GC-table__cell GC-table--right__cell--task-day">
+                                <div class="GC-table--right__task-stripe" style="width: 100px; top:62px; left: 100px; background-color: green"></div>
+                            </td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                        </tr>
+                        <tr class="GC-table__row GC-table--right__row GC-table--right__row--task" >
+                            <td class="GC-table__cell GC-table--right__cell--task-day">
+                                <div class="GC-table--right__task-stripe" style="position: absolute; width: 120px; z-index: 10; top:92px; left: 50px; background-color: blue"></div>
+                            </td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                        </tr>
+                        <tr class="GC-table__row GC-table--right__row GC-table--right__row--task">
+                            <td class="GC-table__cell GC-table--right__cell--task-day">
+                                <div class="GC-table--right__task-stripe" style="position: absolute; width: 100px; z-index: 10; top:122px; left: 100px; background-color: green"></div>
+                            </td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                        </tr>
+                        <tr class="GC-table__row GC-table--right__row GC-table--right__row--task">
+                            <td class="GC-table__cell GC-table--right__cell--task-day">
+                                <div class="GC-table--right__task-stripe" style="position: absolute; width: 200px; z-index: 10; top:152px; left: 200px; background-color: red"></div>
+                            </td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                        </tr>
+                        <tr class="GC-table__row GC-table--right__row GC-table--right__row--task">
+                            <td class="GC-table__cell GC-table--right__cell--task-day">
+                                <div class="GC-table--right__task-stripe" style="position: absolute; width: 100px; z-index: 10; top:182px; left: 80px; background-color: yellow"></div>
+                            </td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                        </tr>
+                        <tr class="GC-table__row GC-table--right__row GC-table--right__row--task">
+                            <td class="GC-table__cell GC-table--right__cell--task-day">
+                                <div class="GC-table--right__task-stripe" style="position: absolute; width: 100px; z-index: 10; top:212px; left: 100px; background-color: green"></div>
+                            </td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                            <td class="GC-table__cell GC-table--right__cell--task-day"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="error-block" class="error-block hidden">
+                <div class="alert alert-danger error-block__msg">
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__text"> Завдання відбіркового етапу UA Web Challenge IX Front-end (JavaScript) Junior </p>
+        </footer>
+
+        <script src="./js/bundle.js"></script>
+    </body>
+</html>
