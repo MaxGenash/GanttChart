@@ -4,6 +4,7 @@ nodemon-ignore
 node_modules
 bower_components
 dist
+public\jsbundle.js
 *.swp
 
 # Logs
